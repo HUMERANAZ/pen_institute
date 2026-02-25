@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEN Coaching Institute – RT Nagar, Bangalore</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#f5a623;--gold-dark:#d4871a;--navy:#0d1b3e;--red:#e63946;--cream:#fdf8f0;--text:#1a1a2e;--muted:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+.notice-band{background:var(--gold);text-align:center;padding:.6rem;font-size:.85rem;font-weight:700;color:var(--navy)}
+.notice-band a{color:var(--navy)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,27,62,.97);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;border-bottom:2px solid var(--gold)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:#fff}.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.88rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy)!important;padding:.5rem 1.2rem;border-radius:4px;font-weight:700!important}
+.hero{min-height:100vh;background:var(--navy);display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;padding-top:68px}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(245,166,35,.15) 0%,transparent 70%);border-radius:50%}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:6rem 5% 4rem 8%;position:relative;z-index:2}
+.hero-tag{display:inline-block;background:var(--gold);color:var(--navy);font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.35rem 1rem;border-radius:2px;margin-bottom:1.5rem;width:fit-content;animation:fadeUp .6s ease both}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1.2rem;animation:fadeUp .6s .1s ease both}.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{color:rgba(255,255,255,.65);font-size:1.05rem;line-height:1.7;max-width:480px;margin-bottom:2.5rem;animation:fadeUp .6s .2s ease both}
+.hero-btns{display:flex;gap:1rem;animation:fadeUp .6s .3s ease both}
+.btn-primary{background:var(--gold);color:var(--navy);padding:.9rem 2rem;border-radius:4px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s,box-shadow .2s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,166,35,.4)}
+.btn-outline{border:2px solid rgba(255,255,255,.3);color:#fff;padding:.9rem 2rem;border-radius:4px;font-weight:500;font-size:.95rem;text-decoration:none;transition:border-color .2s,background .2s}
+.btn-outline:hover{border-color:var(--gold);background:rgba(245,166,35,.1)}
+.hero-right{display:flex;align-items:center;justify-content:center;padding:6rem 8% 4rem 2%;position:relative;z-index:2}
+.hero-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;width:100%;max-width:400px;animation:fadeUp .6s .4s ease both}
+.stat-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:1.8rem 1.5rem;text-align:center;transition:border-color .3s,background .3s}
+.stat-card:hover{border-color:var(--gold);background:rgba(245,166,35,.08)}
+.stat-card .num{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:900;color:var(--gold);line-height:1}
+.stat-card .label{color:rgba(255,255,255,.6);font-size:.82rem;margin-top:.4rem}
+section{padding:6rem 8%}
+.section-label{font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.75rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.15;margin-bottom:1rem}
+.section-sub{color:var(--muted);font-size:1rem;line-height:1.7;max-width:560px}
+#courses{background:#fff}
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem}
+.course-card{border:2px solid #e8e8e8;border-radius:12px;padding:2rem;transition:border-color .3s,transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+.course-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.course-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+.course-card:hover::before{transform:scaleX(1)}
+.course-icon{font-size:2.2rem;margin-bottom:1rem}
+.course-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+.course-card p{color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:1.2rem}
+.course-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{background:#f3f4f6;color:var(--navy);font-size:.75rem;font-weight:600;padding:.25rem .65rem;border-radius:20px}
+.tag.gold{background:rgba(245,166,35,.15);color:var(--gold-dark)}
+#why{background:var(--navy);position:relative;overflow:hidden}
+#why::before{content:'';position:absolute;top:0;right:0;width:400px;height:400px;background:radial-gradient(circle,rgba(245,166,35,.12) 0%,transparent 70%)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:3rem}
+.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:2rem;transition:background .3s,border-color .3s}
+.why-card:hover{background:rgba(245,166,35,.1);border-color:rgba(245,166,35,.4)}
+.why-icon{width:48px;height:48px;background:rgba(245,166,35,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem}
+.why-card h3{color:#fff;font-weight:600;margin-bottom:.5rem;font-size:1.05rem}.why-card p{color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.65}
+#formula{background:#fff}
+.formula-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
+.formula-pillars{display:grid;gap:1rem}
+.pillar{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;background:var(--cream);border-radius:8px;border-left:4px solid var(--gold)}
+.pillar span:last-child{font-weight:600;font-size:.93rem}
+.workshop-list{list-style:none}
+.workshop-list li{padding:.8rem 0;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:.75rem;color:var(--muted);font-size:.93rem}
+.workshop-list li::before{content:'→';color:var(--gold-dark);font-weight:700}
+#toppers{background:var(--cream)}
+.topper-tabs{display:flex;gap:.75rem;margin-bottom:2rem;flex-wrap:wrap}
+.tab-btn{padding:.5rem 1.2rem;border-radius:20px;border:2px solid #e0e0e0;background:#fff;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;color:var(--muted);font-family:'DM Sans',sans-serif}
+.tab-btn.active{border-color:var(--gold);background:var(--gold);color:var(--navy)}
+.toppers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1rem}
+.topper-card{background:#fff;border-radius:12px;padding:1.5rem 1rem;text-align:center;border:2px solid transparent;transition:border-color .3s,transform .3s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.topper-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.topper-avatar{width:56px;height:56px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto .8rem}
+.topper-card .score{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;color:var(--red)}
+.topper-card .name{font-weight:600;font-size:.82rem;margin:.2rem 0}.topper-card .category{font-size:.72rem;color:var(--muted)}
+#contact{background:linear-gradient(135deg,var(--navy) 60%,#142452)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-info{margin-top:2rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+.contact-icon{width:42px;height:42px;min-width:42px;background:rgba(245,166,35,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.contact-item-text p:first-child{color:rgba(255,255,255,.5);font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.2rem}
+.contact-item-text p:last-child{color:#fff;font-weight:500;font-size:.93rem}
+.admission-form{background:#fff;border-radius:16px;padding:2.5rem}
+.admission-form h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:1.5rem;color:var(--navy)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.06em}
+.form-group input,.form-group select{width:100%;padding:.75rem 1rem;border:2px solid #e8e8e8;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.93rem;outline:none;color:var(--text);background:#fff;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus{border-color:var(--gold)}
+.form-submit{width:100%;padding:1rem;background:var(--navy);color:#fff;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:background .2s,transform .2s;margin-top:.5rem}
+.form-submit:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px)}
+footer{background:#080f22;padding:3rem 8%;text-align:center;color:rgba(255,255,255,.4);font-size:.85rem;border-top:1px solid rgba(255,255,255,.08)}
+footer strong{color:rgba(255,255,255,.7)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr}.hero-content{padding:5rem 6% 2rem}.hero-right{padding:0 6% 4rem}
+  .contact-grid,.formula-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}
+  .nav-links{display:none}section{padding:4rem 6%}
+}
+</style>
+</head>
+<body>
+
+<div class="notice-band">
+  🎉 Admissions Open for 2025–2026 &nbsp;|&nbsp; Early bird discounts available! &nbsp;
+  <a href="#contact">Enquire Now →</a>
+</div>
+
+<nav>
+  <div class="nav-logo"><span>PEN</span> Coaching Institute</div>
+  <ul class="nav-links">
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#why">Why PEN</a></li>
+    <li><a href="#formula">Our Approach</a></li>
+    <li><a href="#toppers">Toppers</a></li>
+    <li><a href="#contact" class="nav-cta">Enroll Now</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Est. Since 2010 • ISO 9001:2008 Certified</div>
+    <h1>Shape Your <em>Future</em> with Expert Coaching</h1>
+    <p>PEN Coaching Institute empowers students from Grade VIII to II PU with comprehensive academic and psychological training — because excellence is a habit, not an event.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Apply for Admission</a>
+      <a href="#courses" class="btn-outline">View Courses</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats-grid">
+      <div class="stat-card"><div class="num">15+</div><div class="label">Years of Excellence</div></div>
+      <div class="stat-card"><div class="num">99%</div><div class="label">Top Scorer Record</div></div>
+      <div class="stat-card"><div class="num">1200+</div><div class="label">Best CET Rank</div></div>
+      <div class="stat-card"><div class="num">3</div><div class="label">Boards Covered</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="section-label">What We Offer</div>
+  <h2 class="section-title">Courses Designed to Excel</h2>
+  <p class="section-sub">From foundation to competitive entrance exams, PEN covers every milestone in your academic journey.</p>
+  <div class="courses-grid">
+    <div class="course-card"><div class="course-icon">📘</div><h3>Grade VIII & IX</h3><p>Early foundation coaching building strong core concepts for State and CBSE board students.</p><div class="course-tags"><span class="tag">State</span><span class="tag">CBSE</span></div></div>
+    <div class="course-card"><div class="course-icon">🎓</div><h3>Grade X Foundation</h3><p>Comprehensive coaching for all three major boards with focused exam preparation and revision.</p><div class="course-tags"><span class="tag">CBSE</span><span class="tag">ICSE</span><span class="tag">State</span></div></div>
+    <div class="course-card"><div class="course-icon">🔬</div><h3>I PU Science</h3><p>Strong conceptual grounding in Physics, Chemistry, Mathematics and Biology for Class 11 students.</p><div class="course-tags"><span class="tag">PCMB</span><span class="tag">PCMC</span><span class="tag">PCME</span></div></div>
+    <div class="course-card"><div class="course-icon">🏆</div><h3>II PU Science + Entrances</h3><p>Dual-focused coaching to ace board exams while cracking national entrance tests simultaneously.</p><div class="course-tags"><span class="tag gold">CET</span><span class="tag gold">NEET</span><span class="tag gold">JEE</span></div></div>
+    <div class="course-card"><div class="course-icon">💼</div><h3>II PU Commerce</h3><p>Expert coaching for commerce streams including Statistics, Economics, Business and Accountancy.</p><div class="course-tags"><span class="tag">SEBA</span><span class="tag">SMBA</span><span class="tag">CsEBA</span></div></div>
+    <div class="course-card"><div class="course-icon">🌟</div><h3>Free Bridge Course</h3><p>Exclusive free programme for students transitioning from X to I PU Science, ensuring zero learning gaps.</p><div class="course-tags"><span class="tag gold">FREE</span><span class="tag">I PU Science</span></div></div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-label">Our Difference</div>
+  <h2 class="section-title" style="color:#fff;">Why PEN Stands Apart</h2>
+  <p class="section-sub" style="color:rgba(255,255,255,.55);">A division of Innvity Learning Systems, PEN gives equal importance to both academic excellence and psychological preparedness.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">🎓</div><h3>Best Faculty</h3><p>Experienced, inspiring educators committed to every student's individual growth and success.</p></div>
+    <div class="why-card"><div class="why-icon">📋</div><h3>Comprehensive Methodology</h3><p>Structured curriculum with exhaustive study material, regular assessments, and personalised coaching plans.</p></div>
+    <div class="why-card"><div class="why-icon">🏛️</div><h3>World-Class Infrastructure</h3><p>Smart AC classrooms, conference room, student discussion areas, visitor lounge, and 24/7 CCTV monitoring.</p></div>
+    <div class="why-card"><div class="why-icon">🧠</div><h3>Psychological Edge</h3><p>International trainers lead workshops on NLP, life skills, personal counselling, and parenting to strengthen mindset.</p></div>
+    <div class="why-card"><div class="why-icon">🎯</div><h3>Proven Results</h3><p>Consistent toppers in CET, NEET, JEE, ICSE, CBSE and State boards year after year since 2010.</p></div>
+    <div class="why-card"><div class="why-icon">💬</div><h3>Career Counselling</h3><p>Dedicated career guidance for students choosing paths in engineering, medicine, and professional courses.</p></div>
+  </div>
+</section>
+
+<section id="formula">
+  <div class="section-label">Our Philosophy</div>
+  <h2 class="section-title">The PEN Success Formula</h2>
+  <div class="formula-grid">
+    <div>
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:2rem;">PEN gives equal importance to both academic proficiency and psychological competency. Along with high quality subject training, students undergo workshops that help them tackle academics better and achieve personal success.</p>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;">The Academic Front</h3>
+      <div class="formula-pillars">
+        <div class="pillar"><span>📚</span><span>Best Faculty with a proven track record</span></div>
+        <div class="pillar"><span>🗺️</span><span>Comprehensive and structured methodology</span></div>
+        <div class="pillar"><span>🏫</span><span>Enabling infrastructure and smart facilities</span></div>
+        <div class="pillar"><span>🎯</span><span>Personalized coaching for every student</span></div>
+        <div class="pillar"><span>📖</span><span>Exhaustive, exam-ready study material</span></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:1.2rem;">The Psychological Front</h3>
+      <ul class="workshop-list">
+        <li>Train Brain Workshop</li>
+        <li>Life Skills Workshop</li>
+        <li>NLP Workshop</li>
+        <li>Personal and Career Counselling</li>
+        <li>Parenting Workshop</li>
+      </ul>
+      <div style="margin-top:2rem;background:var(--cream);border-radius:12px;padding:1.5rem;border-left:4px solid var(--red);">
+        <p style="font-size:.88rem;color:var(--muted);line-height:1.7;">The Psychological Front is led by a panel of international trainers, under the guidance of Managing Director of <strong>INNVITY LEARNING SYSTEMS PVT LTD, Mr. C.T Manjunath.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="toppers">
+  <div style="margin-bottom:2rem;">
+    <div class="section-label">Hall of Fame</div>
+    <h2 class="section-title">PEN Toppers</h2>
+    <p class="section-sub">Our students consistently rank among the best across all boards and competitive examinations.</p>
+  </div>
+  <div class="topper-tabs">
+    <button class="tab-btn active" onclick="filterToppers('all',this)">All</button>
+    <button class="tab-btn" onclick="filterToppers('pu',this)">II PU</button>
+    <button class="tab-btn" onclick="filterToppers('icse',this)">X ICSE</button>
+    <button class="tab-btn" onclick="filterToppers('cbse',this)">X CBSE</button>
+    <button class="tab-btn" onclick="filterToppers('state',this)">X State</button>
+    <button class="tab-btn" onclick="filterToppers('neet',this)">NEET/CET</button>
+  </div>
+  <div class="toppers-grid" id="toppersGrid"></div>
+</section>
+
+<section id="contact">
+  <div class="contact-grid">
+    <div>
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title" style="color:#fff;">Ready to Begin Your Journey?</h2>
+      <p style="color:rgba(255,255,255,.55);margin-top:.75rem;line-height:1.7;">Admissions are now open for 2025–2026. Contact us immediately to avail early bird discounts.</p>
+      <div class="contact-info">
+        <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-item-text"><p>Phone / WhatsApp</p><p>+91 95901 19011</p></div></div>
+        <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-item-text"><p>Email</p><p>pencoachinginstitute@gmail.com</p></div></div>
+        <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-item-text"><p>Address</p><p>#40, Patel Towers, CBI Main Road, Next to St. Jude's Church, R.T. Nagar, Bangalore – 560 032</p></div></div>
+        <div class="contact-item"><div class="contact-icon">🕐</div><div class="contact-item-text"><p>Office Hours</p><p>Mon – Sat: 9:00 AM to 6:00 PM</p></div></div>
+      </div>
+    </div>
+    <div class="admission-form">
+      <h3>Enquiry Form</h3>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Rahul"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Sharma"></div>
+      </div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98765 43210"></div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="student@email.com"></div>
+      <div class="form-group"><label>Course Interested In</label>
+        <select><option>Select a course</option><option>VIII & IX Std (State / CBSE)</option><option>Grade X – CBSE</option><option>Grade X – ICSE</option><option>Grade X – State Board</option><option>I PU Science (PCMB / PCMC / PCME)</option><option>II PU Science + CET / NEET / JEE</option><option>II PU Commerce</option><option>Free Bridge Course</option></select>
+      </div>
+      <div class="form-group"><label>Current Class / Grade</label>
+        <select><option>Select grade</option><option>VIII Std</option><option>IX Std</option><option>X Std</option><option>I PU / XI</option><option>II PU / XII</option></select>
+      </div>
+      <button class="form-submit" onclick="handleSubmit()">Submit Enquiry</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p style="margin-bottom:.5rem;"><strong>PEN Coaching Institute</strong> — A division of Innvity Learning Systems, ISO 9001:2008 Certified</p>
+  <p>#40 Patel Towers, CBI Main Road, RT Nagar, Bangalore 560 032 &nbsp;|&nbsp; +91 95901 19011</p>
+  <p style="margin-top:1rem;">© 2025 PEN Coaching Institute. All rights reserved.</p>
+</footer>
+
+<script>
+var toppers=[
+  {name:"Rakshitha D",score:"99.75%",cat:"pu",emoji:"👩"},{name:"Dheeraj R P",score:"98.25%",cat:"pu",emoji:"👦"},
+  {name:"Vignesh",score:"99%",cat:"pu",emoji:"👦"},{name:"Anam S Khan",score:"98.5%",cat:"pu",emoji:"👩"},
+  {name:"Deepa C",score:"98.25%",cat:"pu",emoji:"👩"},{name:"Prathyusha",score:"98%",cat:"pu",emoji:"👩"},
+  {name:"Manisha V",score:"97%",cat:"pu",emoji:"👩"},{name:"Manisha B",score:"96.25%",cat:"pu",emoji:"👩"},
+  {name:"Pracheth Prasanth",score:"99%",cat:"icse",emoji:"👦"},{name:"Dheeraj R P",score:"97%",cat:"icse",emoji:"👦"},
+  {name:"Shreenidhi JH",score:"97%",cat:"icse",emoji:"👩"},{name:"Sai Karthik",score:"96%",cat:"icse",emoji:"👦"},
+  {name:"Vineet H",score:"94.8%",cat:"icse",emoji:"👦"},{name:"Nanditha S",score:"94%",cat:"icse",emoji:"👩"},
+  {name:"Umair Farooq",score:"100%",cat:"cbse",emoji:"👦"},{name:"Abhishek D A",score:"100%",cat:"cbse",emoji:"👦"},
+  {name:"Ajay Venkatesh",score:"100%",cat:"cbse",emoji:"👦"},{name:"Naya Reddy J",score:"98%",cat:"cbse",emoji:"👩"},
+  {name:"Akshaya S",score:"96%",cat:"state",emoji:"👩"},{name:"Brinda S",score:"96%",cat:"state",emoji:"👩"},
+  {name:"M D Shahaan",score:"95%",cat:"state",emoji:"👦"},{name:"Pavithra A",score:"94%",cat:"state",emoji:"👩"},
+  {name:"Afrin Mohammed",score:"NEET #30",cat:"neet",emoji:"👩"},{name:"Asha Kiran",score:"NEET #1211",cat:"neet",emoji:"👩"},
+  {name:"Dheeraj R P",score:"CET #1200",cat:"neet",emoji:"👦"},{name:"Salman Khan",score:"CET #1602",cat:"neet",emoji:"👦"}
+];
+var catLabel={pu:"II PU",icse:"X ICSE",cbse:"X CBSE",state:"X State",neet:"NEET/CET"};
+function renderToppers(filter){
+  var f=filter==='all'?toppers:toppers.filter(function(t){return t.cat===filter;});
+  document.getElementById('toppersGrid').innerHTML=f.map(function(t){
+    return '<div class="topper-card"><div class="topper-avatar">'+t.emoji+'</div><div class="score">'+t.score+'</div><div class="name">'+t.name+'</div><div class="category">'+catLabel[t.cat]+'</div></div>';
+  }).join('');
+}
+function filterToppers(cat,btn){
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  renderToppers(cat);
+}
+renderToppers('all');
+function handleSubmit(){alert('Thank you for your enquiry!\nOur team will contact you shortly.\n\nFor immediate assistance:\n+91 95901 19011');}
+</script>
+</body>
+</html>
